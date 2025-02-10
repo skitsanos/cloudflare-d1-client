@@ -170,6 +170,10 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+*.lock
+yarn-error.log
+
+
 # IntelliJ based IDEs
 .idea
 

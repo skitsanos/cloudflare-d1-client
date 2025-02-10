@@ -1,0 +1,17 @@
+{
+  "name": "cloudflare-d1-client",
+  "version": "1.0.0",
+  "description": "A robust, environment-configured TypeScript REST client that leverages fetch to securely execute parameterized SQL queries against Cloudflare’s database D1 API",
+  "author": {
+    "name": "Skitsanos"
+  },
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
