@@ -44,6 +44,13 @@ export interface D1QueryResponse<T = unknown>
     success: boolean;
 }
 
+export interface D1ClientOptions
+{
+    accountId: string;
+    databaseId: string;
+    apiKey: string;
+}
+
 export class D1Client
 {
     private accountId: string;
@@ -51,12 +58,19 @@ export class D1Client
     private apiKey: string;
     private baseUrl: string;
 
-    constructor()
+    constructor(options?: D1ClientOptions)
     {
         // Retrieve credentials from environment variables.
         this.accountId = process.env.D1_ACCOUNT_ID as string;
         this.databaseId = process.env.D1_DATABASE_ID as string;
         this.apiKey = process.env.CLOUDFLARE_API_KEY as string;
+
+        if (options)
+        {
+            this.accountId = options.accountId;
+            this.databaseId = options.databaseId;
+            this.apiKey = options.apiKey;
+        }
 
         if (!this.accountId || !this.databaseId || !this.apiKey)
         {
